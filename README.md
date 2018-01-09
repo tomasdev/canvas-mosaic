@@ -1,6 +1,8 @@
 # canvas-mosaic
 JavaScript canvas photo mosaic parsing source and tiles.
 
+Demo: https://tomasdev.github.io/canvas-mosaic/
+
 ### TO-DOs
 
 1. Use web workers for performance optimization
