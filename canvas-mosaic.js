@@ -180,7 +180,7 @@ input.onload = () => {
                     return;
                 }
                 const ratio = OPTS.HOVER_SIZE / TILE_WIDTH;
-                const diff = (1 - ratio) * TILE_WIDTH / 2;
+                let diff = (1 - ratio) * TILE_WIDTH / 2;
                 
                 if (x + diff + TILE_WIDTH * ratio > output.width) {
                     diff = output.width - TILE_WIDTH * ratio - x;
