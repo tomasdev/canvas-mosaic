@@ -180,15 +180,22 @@ input.onload = () => {
                     return;
                 }
                 const ratio = OPTS.HOVER_SIZE / TILE_WIDTH;
-                let diff = (1 - ratio) * TILE_WIDTH / 2;
+                let diffY = diff = (1 - ratio) * TILE_WIDTH / 2;
                 
                 if (x + diff + TILE_WIDTH * ratio > output.width) {
                     diff = output.width - TILE_WIDTH * ratio - x;
                 }
                 
-                let diffY = diff;
+                if (x + diff < 0) {
+                    diff = - x;
+                }
+                
                 if (y + diff + TILE_WIDTH * ratio > output.height) {
                     diffY = output.height - TILE_WIDTH * ratio - y;
+                }
+                
+                if (y + diffY < 0) {
+                    diffY = - y;
                 }
 
                 ctx.drawImage(img, x + diff, y + diffY, TILE_WIDTH * ratio, TILE_WIDTH * ratio);
